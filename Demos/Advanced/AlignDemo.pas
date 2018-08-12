@@ -200,6 +200,8 @@ begin
     Data := Sender.GetNodeData(Node);
     Index := Data.ImageIndex;
   end;
+  if (Kind = ikState) and (Column = Sender.Header.MainColumn) then
+    Index := 1;
 end;
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -252,6 +254,7 @@ begin
       end;
     end;
   end;
+  Node.CheckType := TCheckType.ctTriStateCheckBox;
 end;
 
 //----------------------------------------------------------------------------------------------------------------------
